@@ -36,10 +36,10 @@
             <tr v-for="(item,index) in dataArr">
                 <td class="name">{{item.name}}</td>
                 <td class="remark"><input type="text" v-model="item.remark"></td>
-                <td class="price"><input type="text" v-model="item.price | moneyFormat(item.price)"></td>
+                <td class="price"><input type="text" v-model="(item.price).toFixed(2)"></td>
                 <td class="unit">{{item.unit}}</td>
-                <td class="num"><input type="text" v-model="item.num | moneyFormat(item.num)"></td>
-                <td class="money"><input type="text" :value="item.price*item.num | moneyFormat(item.price*item.num)"></td>
+                <td class="num"><input type="text" v-model="(item.num).toFixed(2)"></td>
+                <td class="money"><input type="text" :value="(item.price*item.num).toFixed(2)"></td>
                 <td class="incr"><input type="text" :value="increase(item.incr,item.incrunit)"><span></span></td>
                 <td class="delete"><a href="#" @click="deleteList(index)">x</a></td>
             </tr>
