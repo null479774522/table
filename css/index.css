@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#box{
+    width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #e1f0ff;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+}
+
+thead{
+    background-color: #cde2fc;
+}
+
+td,th{
+    border: 1px solid #000;
+}
+
+caption{
+    text-align: left;
+    color: blue;
+    font-weight: bold;
+}
+
+tbody>tr{
+    height: 40px;
+    text-align: center;
+}
+
+tbody>tr>td{
+    padding: 5px;
+}
+
+tbody>tr>td>input{
+    width: 100%;
+    height: 30px;
+    text-align: right;
+}
+
+tbody>tr>td:not(.remark)>input{
+    border-left: 3px solid red;
+}
+
+tbody>tr>td.incr{
+    position: relative;
+}
+tbody>tr>td.incr>input{
+    text-align: center;
+}
+tbody>tr>td.incr>span{
+    display: inline-block;
+    width:0;
+    height:0;
+    border-width:5px 5px 0 5px;
+    border-style:solid;
+    border-color:#000 transparent transparent transparent ;/*透明 透明 透明 灰*/
+    position: absolute;
+    right: 10%;
+    top: 50%;
+}
+tbody>tr>td.delete>a{
+    color: blue;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+thead th:nth-child(1){
+    width: 30%;
+}
+
+thead th:last-child{
+    width: 3%;
+}
+
+button{
+    color: blue;
+    font-size: 16px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.delete{
+    border: none;
+    background-color: #e1f0ff;
+}

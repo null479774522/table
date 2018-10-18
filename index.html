@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div id="box">
+    <table>
+        <caption>收款项目明细</caption>
+        <thead>
+            <tr>
+                <th>收费项目</th>
+                <th>备注说明</th>
+                <th>单价</th>
+                <th>单位</th>
+                <th>数量</th>
+                <th>金额</th>
+                <th>每年递增</th>
+                <th class="delete"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--<tr>-->
+                <!--<td class="name">物业费</td>-->
+                <!--<td class="remark"><input type="text"></td>-->
+                <!--<td class="price"><input type="text" value="5"></td>-->
+                <!--<td class="unit">元/月·平方</td>-->
+                <!--<td class="num"><input type="text" value="158"></td>-->
+                <!--<td class="money"><input type="text" value="790.00"></td>-->
+                <!--<td class="incr"><input type="text" value="0 %"><span></span></td>-->
+                <!--<td class="delete"><a href="#">x</a></td>-->
+            <!--</tr>-->
+
+            <tr v-for="(item,index) in dataArr">
+                <td class="name">{{item.name}}</td>
+                <td class="remark"><input type="text" v-model="item.remark"></td>
+                <td class="price"><input type="text" v-model="item.price"></td>
+                <td class="unit">{{item.unit}}</td>
+                <td class="num"><input type="text" v-model="item.num"></td>
+                <td class="money"><input type="text" :value="item.price*item.num"></td>
+                <td class="incr"><input type="text" :value="increase(item.incr,item.incrunit)"><span></span></td>
+                <td class="delete"><a href="#" @click="deleteList(index)">x</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <button @click="addList">添加收款明细</button>
+</div>
+<script src="js/vue.js"></script>
+<script src="js/vue-resource.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
