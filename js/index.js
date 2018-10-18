@@ -12,6 +12,10 @@ new Vue({
             const res = response.body;
         if(res){
             this.dataArr = res.row;
+            this.dataArr.forEach(function (item,index) {
+                item.price = item.price.toFixed(2);
+                item.num = item.num.toFixed(2);
+            });
             console.log(this.dataArr);
         }
     }, response => {
@@ -38,8 +42,7 @@ new Vue({
             dataList.unit = "元/月·平方";
 
             this.dataArr.push(dataList);
+        },
 
-        }
     }
-
 });
