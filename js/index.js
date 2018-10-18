@@ -40,6 +40,11 @@ new Vue({
             this.dataArr.push(dataList);
 
         }
-    }
+    },
+   filters: {
+        moneyFormat(money){
+            return money.toFixed(2);
+        }
+    },
 
 });
